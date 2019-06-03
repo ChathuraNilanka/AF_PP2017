@@ -12,6 +12,8 @@ export default class AddBook extends Component{
         this.state = {
             authors: []
         };
+
+        this._submit = this._submit.bind(this);
     }
 
     componentDidMount(){
@@ -54,6 +56,7 @@ export default class AddBook extends Component{
         }).then(res => {
             console.log(res);
             alert("New bokk added successfully");
+            ReactDOM.render(<App/>, document.getElementById('root'));
         }).catch(err=>{
             console.log(err);
         });
